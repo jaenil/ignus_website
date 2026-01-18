@@ -1,42 +1,48 @@
+import sectionGradients from "../styles/sectionGradients";
+
 export default function MascotSection() {
   return (
-    <section className="w-full py-12 flex justify-center">
-      <div className="w-full max-w-6xl px-4 flex flex-col items-center text-center">
+    <section
+      className={`${sectionGradients.mascot} relative w-full py-20 flex justify-center overflow-hidden`}
+    >
+      {/* Radial glow behind mascot */}
+      <div
+        className="
+          absolute
+          top-1/3
+          left-1/2
+          -translate-x-1/2
+          -translate-y-1/2
+          w-[600px]
+          h-[600px]
+          rounded-full
+          bg-white
+          opacity-40
+          blur-3xl
+          pointer-events-none
+        "
+      />
 
-        {/* Mascot (LARGER, DOMINANT) */}
+      <div className="relative w-full max-w-6xl px-4 flex flex-col items-center text-center">
+
+        {/* Mascot */}
         <img
           src="/mascot.svg"
           alt="Ignus Mascot"
-          className="w-72 sm:w-80 md:w-[250rem] h-auto"
+          className="w-64 sm:w-72 md:w-80 h-auto"
         />
 
         {/* Tagline */}
-        <p className="mt-6 text-sm italic">
+        <p className="mt-6 text-sm italic font-bold font-rosiana text-[#370068]">
           “Step In. Stay Awake. The Carnival Has Begun.”
         </p>
 
         {/* Register Button */}
-        <button className="mt-4 px-8 py-2 rounded-full border">
+        <button className="mt-4 px-8 py-2 rounded-full bg-black text-[#FFD966]">
           Register
         </button>
 
-        {/* CONTACT + QR WRAPPER (SINGLE DIV) */}
-        <div className="mt-20 w-full flex flex-col md:flex-row items-center justify-between gap-8">
-
-          {/* Contact Us */}
-          <h2 className="text-2xl font-bold">
-            CONTACT US
-          </h2>
-
-          {/* QR Codes */}
-          <div className="flex gap-6">
-            <img src="/qr1.svg" alt="QR 1" className="w-20 h-20" />
-            <img src="/qr2.svg" alt="QR 2" className="w-20 h-20" />
-            <img src="/qr3.svg" alt="QR 3" className="w-20 h-20" />
-          </div>
-
-        </div>
-
+        
       </div>
     </section>
   );

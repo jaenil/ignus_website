@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 import InitiativePrakriti from "../sections/InitiativePrakriti";
 import MascotSection from "../sections/MascotSection";
 import MidnightCarnival from "../sections/MidnightCarnival";
-
+import ContactUs from "../sections/ContactUs";
 
 export default function Home() {
   return (
@@ -22,8 +22,8 @@ export default function Home() {
         <MidnightCarnival />
         <InitiativePrakriti />
         <MascotSection />
+        <ContactUs />
         <Footer />
-        {/* Other sections will go here */}
       </main>
     </>
   );

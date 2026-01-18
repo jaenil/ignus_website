@@ -1,24 +1,60 @@
+import sectionGradients from "../styles/sectionGradients";
+
 export default function Hero() {
   return (
-    <section className="w-full py-12">
-      <div className="w-full flex justify-center">
-        <div className="flex flex-col items-center gap-6 w-full max-w-6xl px-4">
+    <section
+      className={`${sectionGradients.hero} relative w-full overflow-hidden flex justify-center`}
+    >
+      <div className="relative w-full max-w-7xl px-4 py-24 flex flex-col items-center">
 
-          {/* Hero Image */}
+        {/* IGNUS LOGO */}
+        <img
+          src="/main_logo.svg"
+          alt="Ignus 2026"
+          className="w-full max-w-5xl h-auto"
+        />
+
+        {/* CTA ROW */}
+        <div className="mt-12 flex items-center gap-6 group">
+
+          {/* Left Decorative Image */}
           <img
-            src="/main_logo.svg"
-            alt="Ignus 2026"
-            className="w-full h-auto"
+            src="/masked_image.svg"
+            alt=""
+            className="w-6 sm:w-8 md:w-26 h-auto 
+            transition-transform duration-300 
+            group-hover:-rotate-30 ease-out"
           />
 
           {/* Register Button */}
-          <div className="relative flex items-center justify-center">
-            <button className="px-8 py-3 border rounded">
-              Register
-            </button>
-          </div>
+          <button
+            className="
+              px-10 py-2
+              rounded-full
+              border
+              border-[#FFCD7A]
+              text-[#FFCD7A]
+              bg-black
+              font-medium
+              transition-all duration-300
+              hover:bg-[#FFCD7A]
+              hover:text-black
+              hover:px-14
+            "
+          >
+            Register
+          </button>
 
+          {/* Right Decorative Image */}
+          <img
+            src="/masked_image.svg"
+            alt=""
+            className="w-6 sm:w-8 md:w-26 h-auto 
+            transition-transform duration-300 
+            group-hover:rotate-30 ease-out"
+          />
         </div>
+
       </div>
     </section>
   );

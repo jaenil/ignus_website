@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { navLinks } from "./navLinks";
-
+import sectionGradients from "../../styles/sectionGradients";
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
@@ -16,7 +16,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-black/60">
+    <header className={`${sectionGradients.nav} fixed top-0 left-0 w-full z-50 `}>
       <nav className="relative mx-auto max-w-7xl px-4">
         <div className="flex h-16 items-center justify-between">
 
@@ -32,7 +32,9 @@ export default function Navbar() {
           {/* Desktop Links */}
           <ul className="hidden lg:flex gap-8 text-sm text-white list-none">
             {navLinks.map((link) => (
-              <li key={link.label}>
+              <li key={link.label}
+              className="text-[#FCFCFC] cursor-pointer transition-opacity hover:opacity-80"
+              >
                 <a
                   href={link.href}
                   className="hover:text-purple-300 transition-colors"

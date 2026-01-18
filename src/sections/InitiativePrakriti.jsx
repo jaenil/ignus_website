@@ -1,14 +1,21 @@
+import sectionGradients from "../styles/sectionGradients";
+
 export default function InitiativePrakriti() {
   return (
-    <section className="w-full pb-0 flex justify-center">
+    <section className={`${sectionGradients.initiativePrakriti} w-full py-20 flex justify-center`}>
       <div className="w-full max-w-6xl px-6 grid grid-cols-1 md:grid-cols-2 md:items-start">
 
         {/* LEFT CONTENT */}
         <div className="flex flex-col gap-6">
 
-          <h2 className="text-2xl font-bold uppercase">
-            Initiative Prakriti
-          </h2>
+          <div className="flex flex-col">
+            <h2 className="text-2xl font-rosiana uppercase text-[#000000] leading-tight">
+              Initiative
+            </h2>
+            <h2 className="text-2xl uppercase text-[#000000] font-rosiana leading-tight">
+              Prakriti
+            </h2>
+          </div>
 
           <p className="text-sm leading-relaxed max-w-md">
             Prakriti is the social wing of IGNUS. The sense of social upliftment

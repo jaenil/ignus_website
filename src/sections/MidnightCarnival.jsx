@@ -1,11 +1,13 @@
+import sectionGradients from "../styles/sectionGradients";
+
 export default function MidnightCarnival() {
   return (
-    <section className="relative w-full overflow-hidden py-20 flex justify-center">
+    <section className={`${sectionGradients.midnightCarnival} relative w-full overflow-hidden py-20 flex justify-center`}>
       
       <div className="relative w-full max-w-6xl px-4 flex flex-col items-center gap-6">
 
         {/* Title */}
-        <h2 className="text-2xl font-bold text-center relative z-20">
+        <h2 className="text-2xl font-bold text-center relative z-20 text-[#FFFFFF]">
           The Midnight Carnival
         </h2>
 

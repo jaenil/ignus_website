@@ -1,6 +1,7 @@
+import sectionGradients from "../styles/sectionGradients";
 export default function AboutUs() {
   return (
-    <section className="relative w-full py-16 flex justify-center overflow-hidden">
+    <section className={`${sectionGradients.about} relative w-full py-16 flex justify-center overflow-hidden`}>
 
       {/* Clouds layer (decorative only) */}
       <div className="absolute inset-0 pointer-events-none">
@@ -34,11 +35,11 @@ export default function AboutUs() {
           className="w-20 h-auto"
         />
 
-        <h2 className="text-xl font-bold">
+        <h2 className="text-xl font-bold text-[#FFFFFF]">
           ABOUT US
         </h2>
 
-        <p className="text-sm leading-relaxed">
+        <p className="text-sm leading-relaxed text-[#FFFFFF]">
           IGNUS, the much anticipated annual socio-cultural fest of IIT Jodhpur, is now back, after three years.
           IGNUS celebrates art, culture and pluralism. It provides a stage for the creative and intellectual minds
           from across the country to showcase their incredible talent and creativity through art and culture.
