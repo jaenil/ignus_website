@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { navLinks } from "./navLinks";
 import sectionGradients from "../../styles/sectionGradients";
 export default function Navbar() {
@@ -16,7 +17,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className={`${sectionGradients.nav} fixed top-0 left-0 w-full z-50 `}>
+    <header className={` fixed top-0 left-0 w-full z-50 `}>
       <nav className="relative mx-auto max-w-7xl px-4">
         <div className="flex h-16 items-center justify-between">
 
@@ -30,7 +31,7 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Links */}
-          <ul className="hidden lg:flex gap-8 text-sm text-white list-none">
+          <ul className="hidden lg:flex gap-8 text-sm text-white list-none items-center">
             {navLinks.map((link) => (
               <li key={link.label}
               className="text-[#FCFCFC] cursor-pointer transition-opacity hover:opacity-80"
@@ -43,6 +44,16 @@ export default function Navbar() {
                 </a>
               </li>
             ))}
+            {/* Profile Icon */}
+            <li className="text-[#FCFCFC] cursor-pointer transition-opacity hover:opacity-80">
+              <Link to="/profile">
+                <img
+                  src="/profile.svg"
+                  alt="Profile"
+                  className="h-6 w-6"
+                />
+              </Link>
+            </li>
           </ul>
 
           {/* Hamburger */}
@@ -73,6 +84,21 @@ export default function Navbar() {
                     </a>
                     </li>
                 ))}
+                {/* Profile Link in Mobile */}
+                <li>
+                  <Link
+                    to="/profile"
+                    onClick={() => setOpen(false)}
+                    className="flex items-center gap-2 py-2"
+                  >
+                    <img
+                      src="/profile.svg"
+                      alt="Profile"
+                      className="h-5 w-5"
+                    />
+                    Profile
+                  </Link>
+                </li>
                 </ul>
             </div>
             )}
