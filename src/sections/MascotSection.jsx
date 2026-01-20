@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import sectionGradients from "../styles/sectionGradients";
 
 export default function MascotSection() {
@@ -38,9 +39,9 @@ export default function MascotSection() {
         </p>
 
         {/* Register Button */}
-        <button className="mt-4 px-8 py-2 rounded-full bg-black text-[#FFD966]">
+        <Link to="/auth" className="mt-4 px-8 py-2 rounded-full bg-black text-[#FFD966]">
           Register
-        </button>
+        </Link>
 
         
       </div>

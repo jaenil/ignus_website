@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import sectionGradients from "../styles/sectionGradients";
 
 export default function Hero() {
@@ -27,7 +28,8 @@ export default function Hero() {
           />
 
           {/* Register Button */}
-          <button
+          <Link
+            to="/auth"
             className="
               px-10 py-2
               rounded-full
@@ -43,7 +45,7 @@ export default function Hero() {
             "
           >
             Register
-          </button>
+          </Link>
 
           {/* Right Decorative Image */}
           <img

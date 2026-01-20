@@ -27,8 +27,9 @@ export default function Auth() {
     phoneNo: "",
     gender: "",
     college: "",
-    collegeYear: "",
-    docId: null,
+    currentYear: "",
+    referralCode: "",
+    govId: null,
     collegeId: null,
   });
 
@@ -313,32 +314,44 @@ export default function Auth() {
                   />
                   <input
                     type="text"
-                    placeholder="College Year"
-                    value={profileData.collegeYear}
+                    placeholder="Current Year"
+                    value={profileData.currentYear}
                     onChange={(e) =>
                       setProfileData({
                         ...profileData,
-                        collegeYear: e.target.value,
+                        currentYear: e.target.value,
+                      })
+                    }
+                    className="w-full px-4 py-3 rounded-full bg-white/20 text-white placeholder-white/60 border border-white/30 focus:outline-none focus:border-white"
+                  />
+                  <input
+                    type="text"
+                    placeholder="Referral Code"
+                    value={profileData.referralCode}
+                    onChange={(e) =>
+                      setProfileData({
+                        ...profileData,
+                        referralCode: e.target.value,
                       })
                     }
                     className="w-full px-4 py-3 rounded-full bg-white/20 text-white placeholder-white/60 border border-white/30 focus:outline-none focus:border-white"
                   />
 
-                  {/* Doc ID Upload */}
+                  {/* Gov. ID Upload */}
                   <div className="flex items-center gap-3">
                     <input
                       type="text"
-                      placeholder="Doc ID"
+                      placeholder="Gov. ID"
                       readOnly
-                      value={profileData.docId?.name || ""}
+                      value={profileData.govId?.name || ""}
                       className="flex-1 px-4 py-3 rounded-full bg-white/20 text-white placeholder-white/60 border border-white/30"
                     />
-                    <label className="px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-full cursor-pointer transition-colors">
+                    <label className="px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-full cursor-pointer transition-colors">
                       Upload
                       <input
                         type="file"
                         accept="image/*"
-                        onChange={(e) => handleFileUpload("docId", e)}
+                        onChange={(e) => handleFileUpload("govId", e)}
                         className="hidden"
                       />
                     </label>
@@ -353,7 +366,7 @@ export default function Auth() {
                       value={profileData.collegeId?.name || ""}
                       className="flex-1 px-4 py-3 rounded-full bg-white/20 text-white placeholder-white/60 border border-white/30"
                     />
-                    <label className="px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-full cursor-pointer transition-colors">
+                    <label className="px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-full cursor-pointer transition-colors">
                       Upload
                       <input
                         type="file"
