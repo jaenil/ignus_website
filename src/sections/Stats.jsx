@@ -1,8 +1,6 @@
-import sectionGradients from "../styles/sectionGradients";
-
 export default function Stats() {
   return (
-    <section className={`${sectionGradients.stats} w-full py-12 flex justify-center`}>
+    <section className="w-full py-12 flex justify-center">
       <div className="grid grid-cols-3 gap-y-10 gap-x-8 max-w-5xl px-6">
 
         <Stat value="200+" label="COLLEGES" img={"../icon_college.svg"}/>

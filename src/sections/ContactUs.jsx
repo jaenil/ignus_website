@@ -1,8 +1,6 @@
-import sectionGradients from "../styles/sectionGradients"
-
 export default function contactUs () {
     return (
-        <section className={`${sectionGradients.initiativePrakriti}`}>
+        <section>
             <div className="mt-16 w-full flex flex-col md:flex-row items-center justify-between gap-8">
 
             <h2 className="text-2xl font-bold text-[#370068] font-rosiana">

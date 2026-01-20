@@ -1,53 +1,45 @@
-import sectionGradients from "../styles/sectionGradients";
-
 export default function MidnightCarnival() {
   return (
-    <section className={`${sectionGradients.midnightCarnival} relative w-full overflow-hidden py-20 flex justify-center`}>
+    <section className="relative w-full overflow-hidden pt-20 pb-0 flex flex-col items-center">
       
-      <div className="relative w-full max-w-6xl px-4 flex flex-col items-center gap-6">
+      {/* CSS for wheel rotation */}
+      <style>
+        {`
+          @keyframes rotateCounterClockwise {
+            from {
+              transform: rotate(0deg);
+            }
+            to {
+              transform: rotate(-360deg);
+            }
+          }
+          .rotate-wheel {
+            animation: rotateCounterClockwise 30s linear infinite;
+          }
+        `}
+      </style>
 
-        {/* Title */}
-        <h2 className="text-2xl font-bold text-center relative z-20 text-[#FFFFFF]">
-          The Midnight Carnival
-        </h2>
+      {/* Title */}
+      <h2 className="text-4xl md:text-5xl font-bold text-center relative z-20 text-[#FFFFFF] mb-6">
+        The Midnight Carnival
+      </h2>
 
-        {/* Visual scene */}
-        <div className="relative w-full">
+      {/* Visual scene - full width */}
+      <div className="relative w-full">
 
-          {/* BACKGROUND WHEEL */}
-          {/* Fixes applied:
-             1. Changed left-[-40%] to -left-4 (or left-0). 
-                -40% pushes it way off-screen.
-             2. Adjusted width to w-[25%] to match the visual proportion better.
-             3. Added 'absolute' and 'bottom-0' to anchor it correctly.
-          */}
-          <div
-            className="
-              absolute
-              bottom-0
-              -left-4
-              md:-left-12
-              w-[25%]
-              max-w-none
-              opacity-25
-              z-0
-            "
-          >
-            <img
-              src="/wheel_2.svg"
-              alt="Ferris Wheel"
-              className="w-full h-auto"
-            />
-          </div>
+        {/* FERRIS WHEEL - positioned at top-right of skyline with rotation */}
+        <img
+          src="/wheel_2.svg"
+          alt="Ferris Wheel"
+          className="absolute -top-[30%] right-[5%] w-[35%] md:w-[30%] h-auto opacity-40 z-0 rotate-wheel"
+        />
 
-          {/* FOREGROUND SKYLINE */}
-          <img
-            src="/carnival_1.svg"
-            alt="Carnival Skyline"
-            className="relative z-10 w-full h-auto"
-          />
-
-        </div>
+        {/* FOREGROUND SKYLINE - full width edge to edge */}
+        <img
+          src="/carnival_1.svg"
+          alt="Carnival Skyline"
+          className="relative z-10 w-full h-auto"
+        />
 
       </div>
     </section>

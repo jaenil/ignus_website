@@ -1,10 +1,34 @@
 import { Link } from "react-router-dom";
-import sectionGradients from "../styles/sectionGradients";
+import { useRef, useEffect } from "react";
 
 export default function MascotSection() {
+  const videoRef = useRef(null);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && videoRef.current) {
+            videoRef.current.play();
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section
-      className={`${sectionGradients.mascot} relative w-full py-20 flex justify-center overflow-hidden`}
+      ref={sectionRef}
+      className="relative w-full py-20 flex justify-center overflow-hidden"
     >
       {/* Radial glow behind mascot */}
       <div
@@ -26,11 +50,13 @@ export default function MascotSection() {
 
       <div className="relative w-full max-w-6xl px-4 flex flex-col items-center text-center">
 
-        {/* Mascot */}
-        <img
-          src="/mascot.svg"
-          alt="Ignus Mascot"
-          className="w-64 sm:w-72 md:w-80 h-auto"
+        {/* Mascot Video */}
+        <video
+          ref={videoRef}
+          src="/video_mascot.mp4"
+          muted
+          playsInline
+          className="w-80 sm:w-96 md:w-[500px] h-auto"
         />
 
         {/* Tagline */}

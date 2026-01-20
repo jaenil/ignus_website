@@ -17,7 +17,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className={` fixed top-0 left-0 w-full z-50 `}>
+    <header className="fixed top-0 left-0 w-full z-50 bg-transparent">
       <nav className="relative mx-auto max-w-7xl px-4">
         <div className="flex h-16 items-center justify-between">
 

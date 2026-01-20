@@ -1,16 +1,17 @@
 import { Link } from "react-router-dom";
-import sectionGradients from "../styles/sectionGradients";
+import Navbar from "../components/navbar/Navbar";
 
 export default function Hero() {
   return (
     <section
-      className={`${sectionGradients.hero} relative w-full overflow-hidden flex justify-center`}
+      className="relative w-full overflow-hidden flex justify-center"
     >
+      <Navbar />
       <div className="relative w-full max-w-7xl px-4 py-24 flex flex-col items-center">
 
         {/* IGNUS LOGO */}
         <img
-          src="/main_logo.svg"
+          src="/image_2.svg"
           alt="Ignus 2026"
           className="w-full max-w-5xl h-auto"
         />
